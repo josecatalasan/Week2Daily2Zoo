@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".AnimalDetailsActivity">
+
+    <ImageView
+        android:id="@+id/ivAnimal"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/details_view"
+        android:paddingTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/ivAnimal" />
+
+    <TextView
+        android:id="@+id/tvEatingHabit"
+        style="@style/details_view"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <TextView
+        android:id="@+id/tvHabitat"
+        style="@style/details_view"
+        app:layout_constraintTop_toBottomOf="@id/tvEatingHabit" />
+
+    <TextView
+        android:id="@+id/tvKingdom"
+        style="@style/details_view"
+        app:layout_constraintTop_toBottomOf="@id/tvHabitat" />
+
+
+    <TextView
+        android:id="@+id/tvSuborder"
+        style="@style/details_view"
+        app:layout_constraintTop_toBottomOf="@id/tvKingdom" />
+
+    <TextView
+        android:id="@+id/tvFamily"
+        style="@style/details_view"
+        app:layout_constraintTop_toBottomOf="@id/tvSuborder" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/details_view"
+        app:layout_constraintTop_toBottomOf="@id/tvFamily" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
