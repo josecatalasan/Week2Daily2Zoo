@@ -31,16 +31,16 @@ public class AnimalListActivity extends AppCompatActivity {
     }
 
     private ArrayList<Animal> getAnimalList() {
-        ArrayList<Animal> passedList = getIntent().getExtras().getParcelable("animal");
+        ArrayList<Animal> passedList = getIntent().getExtras().getParcelableArrayList("animal");
         String category = getIntent().getStringExtra("category");
 
-        if (category.equalsIgnoreCase("kingdom")) {
+
             for (int i = 0; i < passedList.size(); i++) {
-                if (!passedList.get(i).getKingdom().equalsIgnoreCase(category)){
+                if (!passedList.get(i).getHabitat().equalsIgnoreCase(category)){
                     passedList.remove(i);
                 }
             }
-        }
+
         return passedList;
     }
 }

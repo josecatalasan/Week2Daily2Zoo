@@ -25,14 +25,14 @@ public class AnimalDetailsActivity extends AppCompatActivity {
         Intent passedIntent = getIntent();
         animal = passedIntent.getExtras().getParcelable("animal");
         fillViews();
-        playAnimalSound();
+//        playAnimalSound();
     }
 
     public void bindViews(){
         ivAnimal = findViewById(R.id.ivAnimal);
         tvName = findViewById(R.id.tvName);
         tvEatingHabit = findViewById(R.id.tvEatingHabit);
-        tvHabitat = findViewById(R.id.tvKingdom);
+        tvHabitat = findViewById(R.id.tvHabitat);
         tvKingdom = findViewById(R.id.tvKingdom);
         tvSuborder = findViewById(R.id.tvSuborder);
         tvFamily = findViewById(R.id.tvFamily);
@@ -44,8 +44,8 @@ public class AnimalDetailsActivity extends AppCompatActivity {
 //        Bitmap imageBitmap = (Bitmap) extras.get("data");
 //        imageView.setImageBitmap(imageBitmap);
         tvName.setText(animal.getName());
-        tvEatingHabit.setText(animal.getName());
-        tvHabitat.setText(animal.getName());
+        tvEatingHabit.setText(animal.getEatingHabit());
+        tvHabitat.setText(animal.getHabitat());
         tvKingdom.setText(animal.getKingdom());
         tvSuborder.setText(animal.getSuborder());
         tvFamily.setText(animal.getFamily());
