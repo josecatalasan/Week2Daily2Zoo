@@ -38,6 +38,7 @@ public class AnimalListActivity extends AppCompatActivity {
             for (int i = 0; i < passedList.size(); i++) {
                 if (!passedList.get(i).getHabitat().equalsIgnoreCase(category)){
                     passedList.remove(i);
+                    i--;
                 }
             }
 

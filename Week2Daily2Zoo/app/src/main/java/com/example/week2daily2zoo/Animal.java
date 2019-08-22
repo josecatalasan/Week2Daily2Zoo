@@ -4,19 +4,19 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Animal implements Parcelable {
-    private String name, eatingHabit, habitat, kingdom, suborder, family, imageFile, description;
+    private String name, eatingHabit, habitat, kingdom, genus, species, imageFile, description;
     private int soundFile;
 
     public Animal() {
     }
 
-    public Animal(String name, String eatingHabit, String habitat, String kingdom, String suborder, String family, String imageFile, String description, int soundFile) {
+    public Animal(String name, String eatingHabit, String habitat, String kingdom, String genus, String species, String imageFile, String description, int soundFile) {
         this.name = name;
         this.eatingHabit = eatingHabit;
         this.habitat = habitat;
         this.kingdom = kingdom;
-        this.suborder = suborder;
-        this.family = family;
+        this.genus = genus;
+        this.species = species;
         this.imageFile = imageFile;
         this.description = description;
         this.soundFile = soundFile;
@@ -27,8 +27,8 @@ public class Animal implements Parcelable {
         eatingHabit = in.readString();
         habitat = in.readString();
         kingdom = in.readString();
-        suborder = in.readString();
-        family = in.readString();
+        genus = in.readString();
+        species = in.readString();
         imageFile = in.readString();
         description = in.readString();
         soundFile = in.readInt();
@@ -78,20 +78,18 @@ public class Animal implements Parcelable {
         this.kingdom = kingdom;
     }
 
-    public String getSuborder() {
-        return suborder;
+    public String getGenus() {
+        return genus;
     }
 
-    public void setSuborder(String suborder) {
-        this.suborder = suborder;
+    public void setGenus(String genus) {
+        this.genus = genus;
     }
 
-    public String getFamily() {
-        return family;
-    }
+    public String getSpecies() {return species;}
 
-    public void setFamily(String family) {
-        this.family = family;
+    public void setSpecies(String species) {
+        this.species = species;
     }
 
     public String getImageFile() {
@@ -129,8 +127,8 @@ public class Animal implements Parcelable {
         parcel.writeString(eatingHabit);
         parcel.writeString(habitat);
         parcel.writeString(kingdom);
-        parcel.writeString(suborder);
-        parcel.writeString(family);
+        parcel.writeString(genus);
+        parcel.writeString(species);
         parcel.writeString(imageFile);
         parcel.writeString(description);
         parcel.writeInt(soundFile);

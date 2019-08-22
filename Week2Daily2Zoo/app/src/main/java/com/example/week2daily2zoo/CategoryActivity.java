@@ -26,9 +26,9 @@ public class CategoryActivity extends AppCompatActivity {
         lvCategories = findViewById(R.id.lvCategories);
         final ArrayList<String> categories = new ArrayList<String>();
         categories.add("Jungle");
-        categories.add("Mountain");
+        categories.add("Mountains");
         categories.add("Grasslands");
-        categories.add("Plains");
+        categories.add("Tundra");
         categories.add("Forest");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.category_item, categories);
         lvCategories.setAdapter(arrayAdapter);

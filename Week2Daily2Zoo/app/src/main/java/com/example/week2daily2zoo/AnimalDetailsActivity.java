@@ -7,12 +7,11 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class AnimalDetailsActivity extends AppCompatActivity {
-    //name, eatingHabit, habitat, kingdom, phylum, _class, order, suborder, family, soundFile, imageFile
+    //name, eatingHabit, habitat, kingdom genus, species, soundFile, imageFile
     private ImageView ivAnimal;
-    private TextView tvName, tvEatingHabit, tvHabitat, tvKingdom, tvSuborder, tvFamily, tvDescription;
+    private TextView tvName, tvEatingHabit, tvHabitat, tvKingdom, tvGenus, tvSpecies, tvDescription;
     private MediaPlayer player;
     private Animal animal;
 
@@ -25,30 +24,29 @@ public class AnimalDetailsActivity extends AppCompatActivity {
         Intent passedIntent = getIntent();
         animal = passedIntent.getExtras().getParcelable("animal");
         fillViews();
-//        playAnimalSound();
+        playAnimalSound();
     }
 
     public void bindViews(){
-        ivAnimal = findViewById(R.id.ivAnimal);
+//        ivAnimal = findViewById(R.id.ivAnimal);
         tvName = findViewById(R.id.tvName);
         tvEatingHabit = findViewById(R.id.tvEatingHabit);
         tvHabitat = findViewById(R.id.tvHabitat);
         tvKingdom = findViewById(R.id.tvKingdom);
-        tvSuborder = findViewById(R.id.tvSuborder);
-        tvFamily = findViewById(R.id.tvFamily);
+        tvGenus = findViewById(R.id.tvGenus);
+        tvSpecies = findViewById(R.id.tvSpecies);
         tvDescription = findViewById(R.id.tvDescription);
     }
 
     public void fillViews(){
         //fill ImageView
-//        Bitmap imageBitmap = (Bitmap) extras.get("data");
-//        imageView.setImageBitmap(imageBitmap);
+//        ivAnimal.setImageResource();
         tvName.setText(animal.getName());
         tvEatingHabit.setText(animal.getEatingHabit());
         tvHabitat.setText(animal.getHabitat());
         tvKingdom.setText(animal.getKingdom());
-        tvSuborder.setText(animal.getSuborder());
-        tvFamily.setText(animal.getFamily());
+        tvGenus.setText(animal.getGenus());
+        tvSpecies.setText(animal.getSpecies());
         tvDescription.setText(animal.getDescription());
     }
 
