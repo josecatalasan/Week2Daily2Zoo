@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.week2daily2zoo.model.animal.Animal;
+
 public class AnimalDetailsActivity extends AppCompatActivity {
-    //name, eatingHabit, habitat, kingdom genus, species, soundFile, imageFile
+    //name, eatingHabit, habitat, genus, species, soundFile
     private ImageView ivAnimal;
-    private TextView tvName, tvEatingHabit, tvHabitat, tvKingdom, tvGenus, tvSpecies, tvDescription;
+    private TextView tvName, tvEatingHabit, tvHabitat, tvGenus, tvSpecies, tvDescription;
     private MediaPlayer player;
     private Animal animal;
 
@@ -32,7 +34,6 @@ public class AnimalDetailsActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvEatingHabit = findViewById(R.id.tvEatingHabit);
         tvHabitat = findViewById(R.id.tvHabitat);
-        tvKingdom = findViewById(R.id.tvKingdom);
         tvGenus = findViewById(R.id.tvGenus);
         tvSpecies = findViewById(R.id.tvSpecies);
         tvDescription = findViewById(R.id.tvDescription);
@@ -44,7 +45,6 @@ public class AnimalDetailsActivity extends AppCompatActivity {
         tvName.setText(animal.getName());
         tvEatingHabit.setText(animal.getEatingHabit());
         tvHabitat.setText(animal.getHabitat());
-        tvKingdom.setText(animal.getKingdom());
         tvGenus.setText(animal.getGenus());
         tvSpecies.setText(animal.getSpecies());
         tvDescription.setText(animal.getDescription());

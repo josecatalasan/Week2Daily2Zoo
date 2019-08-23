@@ -36,9 +36,7 @@ public class CategoryActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent animalListIntent = new Intent(view.getContext(), AnimalListActivity.class);
-                Bundle bundle = getIntent().getExtras();
                 animalListIntent.putExtra("category", categories.get(position));
-                animalListIntent.putExtras(bundle);
                 view.getContext().startActivity(animalListIntent);
             }
         });

@@ -1,23 +1,21 @@
-package com.example.week2daily2zoo;
+package com.example.week2daily2zoo.model.animal;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Animal implements Parcelable {
-    private String name, eatingHabit, habitat, kingdom, genus, species, imageFile, description;
+    private String name, eatingHabit, habitat, genus, species, description;
     private int soundFile;
 
     public Animal() {
     }
 
-    public Animal(String name, String eatingHabit, String habitat, String kingdom, String genus, String species, String imageFile, String description, int soundFile) {
+    public Animal(String name, String eatingHabit, String habitat, String genus, String species, String description, int soundFile) {
         this.name = name;
         this.eatingHabit = eatingHabit;
         this.habitat = habitat;
-        this.kingdom = kingdom;
         this.genus = genus;
         this.species = species;
-        this.imageFile = imageFile;
         this.description = description;
         this.soundFile = soundFile;
     }
@@ -26,10 +24,8 @@ public class Animal implements Parcelable {
         name = in.readString();
         eatingHabit = in.readString();
         habitat = in.readString();
-        kingdom = in.readString();
         genus = in.readString();
         species = in.readString();
-        imageFile = in.readString();
         description = in.readString();
         soundFile = in.readInt();
     }
@@ -70,14 +66,6 @@ public class Animal implements Parcelable {
         this.habitat = habitat;
     }
 
-    public String getKingdom() {
-        return kingdom;
-    }
-
-    public void setKingdom(String kingdom) {
-        this.kingdom = kingdom;
-    }
-
     public String getGenus() {
         return genus;
     }
@@ -90,14 +78,6 @@ public class Animal implements Parcelable {
 
     public void setSpecies(String species) {
         this.species = species;
-    }
-
-    public String getImageFile() {
-        return imageFile;
-    }
-
-    public void setImageFile(String imageFile) {
-        this.imageFile = imageFile;
     }
 
     public String getDescription() {
@@ -126,10 +106,8 @@ public class Animal implements Parcelable {
         parcel.writeString(name);
         parcel.writeString(eatingHabit);
         parcel.writeString(habitat);
-        parcel.writeString(kingdom);
         parcel.writeString(genus);
         parcel.writeString(species);
-        parcel.writeString(imageFile);
         parcel.writeString(description);
         parcel.writeInt(soundFile);
     }

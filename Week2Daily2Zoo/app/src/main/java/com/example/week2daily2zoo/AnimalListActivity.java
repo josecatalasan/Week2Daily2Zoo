@@ -4,19 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.week2daily2zoo.model.animal.Animal;
+import com.example.week2daily2zoo.model.datasource.local.database.AnimalDatabaseHelper;
 
 import java.util.ArrayList;
 
 public class AnimalListActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private AnimalDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animal_list);
+
+        dbHelper = new AnimalDatabaseHelper(this);
 
         //layout manager
         recyclerView = findViewById(R.id.rvAnimals);
@@ -24,24 +29,10 @@ public class AnimalListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         //adapter
-        ArrayList<Animal> displayList = getAnimalList();
+        String habitat = getIntent().getStringExtra("category");
+        ArrayList<Animal> displayList = dbHelper.getAnimalsByHabitat(habitat);
         AnimalListAdapter adapter = new AnimalListAdapter(displayList);
         recyclerView.setAdapter(adapter);
 
-    }
-
-    private ArrayList<Animal> getAnimalList() {
-        ArrayList<Animal> passedList = getIntent().getExtras().getParcelableArrayList("animal");
-        String category = getIntent().getStringExtra("category");
-
-
-            for (int i = 0; i < passedList.size(); i++) {
-                if (!passedList.get(i).getHabitat().equalsIgnoreCase(category)){
-                    passedList.remove(i);
-                    i--;
-                }
-            }
-
-        return passedList;
     }
 }
