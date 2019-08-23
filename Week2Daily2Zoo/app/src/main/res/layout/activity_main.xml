@@ -23,7 +23,16 @@
         android:textSize="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="goToCategories"
+        android:onClick="onClick"
         app:layout_constraintTop_toBottomOf="@id/mainHeader"/>
+
+    <Button
+        android:id = "@+id/btnEdit"
+        android:text="Edit Animal Database"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

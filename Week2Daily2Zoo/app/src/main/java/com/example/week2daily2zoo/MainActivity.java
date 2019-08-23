@@ -24,9 +24,16 @@ public class MainActivity extends AppCompatActivity {
         setupAnimals();
     }
 
-    public void goToCategories(View view){
-        Intent categoryIntent = new Intent(this, CategoryActivity.class);
-        startActivity(categoryIntent);
+    public void onClick(View view){
+        switch(view.getId()) {
+            case R.id.btnCategories:
+                Intent categoryIntent = new Intent(this, CategoryActivity.class);
+                startActivity(categoryIntent);
+                break;
+            case R.id.btnEdit:
+                Intent editIntent = new Intent(this, AnimalDBEditActivity.class);
+                startActivity(editIntent);
+        }
     }
 
     public void setupAnimals(){

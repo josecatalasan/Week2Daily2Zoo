@@ -31,7 +31,7 @@ public class AnimalListActivity extends AppCompatActivity {
         //adapter
         String habitat = getIntent().getStringExtra("category");
         ArrayList<Animal> displayList = dbHelper.getAnimalsByHabitat(habitat);
-        AnimalListAdapter adapter = new AnimalListAdapter(displayList);
+        AnimalListAdapter adapter = new AnimalListAdapter(displayList, 0);
         recyclerView.setAdapter(adapter);
 
     }

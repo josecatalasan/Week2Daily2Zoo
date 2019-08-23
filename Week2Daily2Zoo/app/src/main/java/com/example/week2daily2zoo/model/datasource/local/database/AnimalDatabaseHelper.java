@@ -111,7 +111,7 @@ public class AnimalDatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Update Phone in the database
-    public void updatePhoneInDB(String name, Animal animal) {
+    public void updateAnimalInDB(String name, Animal animal) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
@@ -126,7 +126,7 @@ public class AnimalDatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Delete a Phone
-    public void deletePhoneInDB(String name) {
+    public void deleteAnimalInDB(String name) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.delete(AnimalDatabaseContract.TABLE_NAME, "ID = ?", new String[]{name});
     }
