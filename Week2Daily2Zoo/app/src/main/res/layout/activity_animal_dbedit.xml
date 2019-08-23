@@ -1,11 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".AnimalDBEditActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAnimalList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Animal Name"/>
+
+    <EditText
+        android:id="@+id/etEating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Animal Eating Habit"/>
+
+    <EditText
+        android:id="@+id/etHabitat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Animal Habitat"/>
+
+    <EditText
+        android:id="@+id/etGenus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Animal Genus"/>
+
+    <EditText
+        android:id="@+id/etSpecies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Animal Species"/>
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Animal Description"/>
+
+    <!--<EditText-->
+        <!--android:id="@+id/etSound"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Animal Sound File"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnInsert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Insert"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update"
+            android:onClick="onClick"/>
+
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

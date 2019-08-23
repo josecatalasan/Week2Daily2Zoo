@@ -41,6 +41,11 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalListAdapter.Vi
         holder.setItemAnimal(currentAnimal);
     }
 
+    public void onDatabaseChange(ArrayList<Animal> list){
+        animalList = list;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {return animalList.size();}
 
@@ -76,6 +81,7 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalListAdapter.Vi
                         switch(choice){
                             case DialogInterface.BUTTON_POSITIVE:
                                 dbHelper.deleteAnimalInDB(itemAnimal.getName());
+                                onDatabaseChange(dbHelper.getAllAnimal());
                                 break;
                             case DialogInterface.BUTTON_NEGATIVE:
                                 break;
@@ -84,7 +90,7 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalListAdapter.Vi
                     }
                 };
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setMessage("Are you sure?").setPositiveButton("Yes", confirmation)
+                builder.setMessage("Delete animal for database?").setPositiveButton("Yes", confirmation)
                         .setNegativeButton("No",confirmation).show();
             }
         }

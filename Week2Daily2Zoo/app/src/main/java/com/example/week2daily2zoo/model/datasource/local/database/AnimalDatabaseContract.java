@@ -24,7 +24,7 @@ public class AnimalDatabaseContract {
                     TABLE_NAME, COL_NAME, COL_EATING_HABIT, COL_HABITAT, COL_GENUS, COL_SPECIES, COL_DESCRIPTION, COL_SOUND);
 
     //Select All Query
-    public static final String QUERY_SELECT_ALL = String.format("SELECT * FROM %s", TABLE_NAME);
+    public static final String QUERY_SELECT_ALL = String.format("SELECT * FROM %s ORDER BY %s ASC", TABLE_NAME, COL_NAME);
 
     //Select by ID
     public static String QUERY_SELECT_BY_NAME(String name) {

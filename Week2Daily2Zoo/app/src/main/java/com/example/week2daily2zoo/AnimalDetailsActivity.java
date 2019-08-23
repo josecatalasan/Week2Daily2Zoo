@@ -26,7 +26,8 @@ public class AnimalDetailsActivity extends AppCompatActivity {
         Intent passedIntent = getIntent();
         animal = passedIntent.getExtras().getParcelable("animal");
         fillViews();
-        playAnimalSound();
+        if(animal.getSoundFile() != 0)
+            playAnimalSound();
     }
 
     public void bindViews(){
